@@ -8,7 +8,7 @@ stages:
     displayName: Build Project Assets
     container: mcr.microsoft.com/dotnet/sdk:6.0
     steps:
-    -script: |
+    - script: |
         dotnet publish \
         --configuration Release \
         --output out \
@@ -16,7 +16,7 @@ stages:
         --runtime win-x64 \
         --self-contained
       displayName: Publish Executable
-    -script: |
+    - script: |
         dotnet pack \
         --output pkg \
         -p:Version=1.0.0
